@@ -15,7 +15,7 @@
 1. Run database and message queue
 
    ```shell
-   docker-compose up -d db mq
+   docker-compose up -d db
    ```
 
 2. Build wallet service app
