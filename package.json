@@ -1,0 +1,89 @@
+{
+  "name": "wallet",
+  "version": "2.1.1",
+  "main": "app.js",
+  "scripts": {
+    "gen-certs": "./scripts/gen-certs.sh",
+    "start": "node src/index.js",
+    "inspect": "node --inspect=0.0.0.0:9229 src/index.js",
+    "knex": "knex",
+    "test": "mocha ./tests --recursive",
+    "test:cov": "nyc mocha ./tests --recursive && nyc report --reporter=lcov",
+    "lint": "eslint ./src"
+  },
+  "nyc": {
+    "include": [
+      "src",
+      "migrations"
+    ]
+  },
+  "dependencies": {
+    "@grpc/proto-loader": "^0.1.0",
+    "@ont-community/hdkey-secp256r1": "^1.0.1",
+    "amqplib": "^0.5.2",
+    "awilix": "^3.0.5",
+    "bigdecimal": "^0.6.1",
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.3",
+    "bs58": "^4.0.1",
+    "camelcase-keys": "^4.2.0",
+    "canoe-solidity": "^0.1.0",
+    "debug": "^3.1.0",
+    "decimal.js": "^9.0.1",
+    "elliptic": "^6.4.0",
+    "ethereum-input-data-decoder": "^0.1.1",
+    "ethereumjs-abi": "^0.6.7",
+    "ethereumjs-tx": "^1.3.7",
+    "ethereumjs-util": "^6.1.0",
+    "ethereumjs-wallet": "^0.6.2",
+    "express": "^4.16.4",
+    "express-queue": "^0.0.12",
+    "flake-idgen": "^1.1.0",
+    "graylog2": "^0.2.1",
+    "grpc": "^1.8.4",
+    "hdkey": "^1.0.0",
+    "install": "^0.12.2",
+    "ip": "^1.1.5",
+    "jayson": "^2.0.5",
+    "js-sha3": "^0.7.0",
+    "jsonwebtoken": "^8.2.1",
+    "jssha": "^2.3.1",
+    "kafka-node": "^3.0.1",
+    "knex": "^0.15.2",
+    "lodash": "^4.17.4",
+    "node-fetch": "^2.1.2",
+    "npm": "^6.9.0",
+    "pg": "^7.4.1",
+    "randomstring": "^1.1.5",
+    "request": "^2.83.0",
+    "snakecase-keys": "^1.2.0",
+    "stellar-sdk": "^0.10.3",
+    "tinyqueue": "^2.0.0",
+    "underscore": "^1.9.1",
+    "uuid": "^3.3.2",
+    "web3": "^1.0.0-beta.37"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "chai-spies": "^1.0.0",
+    "eslint": "^5.13.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-mocha": "^5.0.0",
+    "mocha": "^5.0.1",
+    "nock": "^9.4.1",
+    "nyc": "^12.0.2",
+    "pre-commit": "^1.2.2",
+    "rewire": "^4.0.1",
+    "sinon": "^6.1.5",
+    "sqlite3": "^3.1.13"
+  },
+  "pre-commit": {
+    "run": [
+      "lint"
+    ],
+    "colors": false
+  },
+  "license": "UNLICENSED"
+}

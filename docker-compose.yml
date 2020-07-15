@@ -1,0 +1,36 @@
+version: "3"
+services:
+  wallet:
+    ports:
+      - 3000:3000
+      - 9229:9229
+    build: .
+    depends_on:
+      # - mq
+      - db
+    volumes:
+      - ./certs:/usr/src/wallet/certs
+    environment:
+      # AMQP_URL: amqp://mq:5672
+      # BLOCKS_QUEUE_EXCHANGE: exchange
+      DATABASE_URL: postgres://db:5432/wallet
+      DEBUG: wallet:*
+      SERVER_SECRET: secret
+      NODE_ENV: development
+      SERVICE_NAMES: erc20
+      SERVICE_TYPE: server
+      PARTITION: 0
+      PORT: 3000
+
+    command: npm run inspect
+  db:
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: wallet
+      POSTGRES_PASSWORD: Itvietsoftwallet
+    image: postgres:9.6-alpine
+  # mq:
+  #   ports:
+  #     - 5672:5672
+  #   image: rabbitmq:3
