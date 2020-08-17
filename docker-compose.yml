@@ -28,7 +28,6 @@ services:
       - 5432:5432
     environment:
       POSTGRES_USER: wallet
-      POSTGRES_PASSWORD: Itvietsoftwallet
     image: postgres:9.6-alpine
   # mq:
   #   ports:
