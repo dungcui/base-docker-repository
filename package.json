@@ -51,7 +51,7 @@
     "kafka-node": "^3.0.1",
     "knex": "^0.15.2",
     "lodash": "^4.17.4",
-    "node-fetch": "^2.1.2",
+    "node-fetch": "^2.6.1",
     "npm": "^6.9.0",
     "pg": "^7.4.1",
     "randomstring": "^1.1.5",
