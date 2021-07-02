@@ -57,7 +57,7 @@
     "randomstring": "^1.1.5",
     "request": "^2.83.0",
     "snakecase-keys": "^1.2.0",
-    "stellar-sdk": "^0.10.3",
+    "stellar-sdk": "^8.2.3",
     "tinyqueue": "^2.0.0",
     "underscore": "^1.9.1",
     "uuid": "^3.3.2",
